@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+
+require 'uw_learn'
+
+username = ARGV[0]
+password = ARGV[1]
+
+begin
+  student = Uwlearn.new username, password
+  student.print_grades
+rescue Exception => e
+  puts e.message  
+end

@@ -2,7 +2,6 @@ source :rubygems
 
 gem 'mechanize'
 gem 'hpricot'
-gem 'awesome_print'
 gem 'httparty'
 gem 'rainbow'
 

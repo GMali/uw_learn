@@ -1,11 +1,21 @@
 Gem::Specification.new do |s|
   s.name        = 'uw_learn'
-  s.version     = '1.0.0.pre'
-  s.summary     = "Tiny web crawler for University of Waterloo students"
-  s.description = "Gets student grades from University of Waterloo's D2L website."
-  s.authors     = ["Gaurav Mali"]
-  s.email       = 'hello@gauravmali.com'
-  s.files       = ["lib/uw_learn.rb"]
+  s.version     = '1.0.1'
+  s.summary     = 'Tiny web crawler for University of Waterloo students.'
+  s.description = 'Displays student grades from D2l in the terminal.'
   s.homepage    = 'https://github.com/GMali/uw_learn'
+  s.author      = 'Gaurav Mali'
+  s.email       = 'hello@gauravmali.com'
+  s.files       = ['lib/uw_learn.rb', 'lib/uw_learn/grade.rb', 'lib/uw_learn/course.rb']
+  s.require_paths << 'lib'
   s.executables << 'uw_learn'
+  s.add_runtime_dependency 'mechanize'
+  s.add_runtime_dependency 'hpricot'
+  s.add_runtime_dependency 'httparty'
+  s.add_runtime_dependency 'rainbow'
+  s.add_development_dependency 'webmock'
+  s.add_development_dependency 'minitest'
+  s.add_development_dependency 'vcr'
+  s.add_development_dependency 'turn'
+  s.add_development_dependency 'rake'
 end

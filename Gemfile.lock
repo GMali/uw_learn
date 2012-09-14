@@ -3,7 +3,6 @@ GEM
   specs:
     addressable (2.3.2)
     ansi (1.4.3)
-    awesome_print (1.0.2)
     crack (0.3.1)
     domain_name (0.5.3)
       unf (~> 0.0.3)
@@ -44,7 +43,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  awesome_print
   hpricot
   httparty
   mechanize

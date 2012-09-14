@@ -4,10 +4,10 @@ Tiny web crawler for University of Waterloo students. Gets student grades from U
 
 Inspired by: https://github.com/phleet/UWAngel-CLI
 
-Currently a pre-release
+Version 1.0.1
 
 ## Installation
-    $ [sudo] gem install uw_learn --pre
+    $ [sudo] gem install uw_learn
 
 ## Usage
     require 'uw_learn'

@@ -20,8 +20,8 @@ class Uwlearn
   # Creates a new instance of UW Learn account.
   # Proceeds to login and scrape grades.
   #
-  # @param [String] The student username
-  # @param [String] The student password
+  # @param login [String] The student username
+  # @param password [String] The student password
   #
   def initialize(login, password)
     @user_login = login
@@ -38,17 +38,15 @@ class Uwlearn
   end
 
   ##
-  # @!method login
-  #   The username that the account was logged in with
-  #   @return [String] The username
+  # The username that the account was logged in with
+  # @return [String] The username
   #   
   def login
     @user_login
   end
 
   ##
-  # @!method print_courses
-  #   Prints out the names of all the courses
+  # Prints out the names of all the courses
   #  
   def print_courses
     @learn_courses.each do |course|
@@ -57,17 +55,15 @@ class Uwlearn
   end
 
   ##
-  # @!method courses
-  #   The array of the user's courses in string format
-  #   @return [Array] The user's courses
+  # The array of the user's courses in string format
+  # @return [Array] The user's courses
   #  
   def courses
     @learn_courses
   end
 
   ##
-  # @!method print_grades
-  #   Prints out every course's name and the grades registered with it
+  # Prints out every course's name and the grades registered with it
   #  
   def print_grades
     @learn_grades.each do |grade|
@@ -77,9 +73,8 @@ class Uwlearn
   end
 
   ##
-  # @!method grades
-  #   The array of user's grades in string format
-  #   @return [Array] The user's grades
+  # The array of user's grades in string format
+  # @return [Array] The user's grades
   #  
   def grades
     @learn_grades
@@ -88,41 +83,36 @@ class Uwlearn
   private
 
   ##
-  # learn_url
-  #   Holding on to the learn URL for easy change. You may try simply changing this URL to a different University's URL.
-  #   But remember, this is a hacky scrape job. Don't be surprised if things break.
+  # Holding on to the learn URL for easy change. You may try simply changing this URL to a different University's URL.
+  # But remember, this is a hacky scrape job. Don't be surprised if things break.
   #  
   def learn_url
     "http://learn.uwaterloo.ca"
   end 
 
   ##
-  # course_url
-  #   Just in case if D2L decides to change their markup, you know where to look for (hopefully) a quick fix.
+  # Just in case if D2L decides to change their markup, you know where to look for (hopefully) a quick fix.
   #  
   def course_url
     "/d2l/lp/ouHome/home.d2l?ou="
   end
 
   ##
-  # course_html
-  #   Just in case if D2L decides to change their markup, you know where to look for (hopefully) a quick fix.
+  # Just in case if D2L decides to change their markup, you know where to look for (hopefully) a quick fix.
   #  
   def course_html
     "//ul[@id='z_w']//div[@class='dco_c']//a"
   end
 
   ##
-  # error_html
-  #   Just in case if D2L decides to change their markup, you know where to look for (hopefully) a quick fix.
+  # Just in case if D2L decides to change their markup, you know where to look for (hopefully) a quick fix.
   #  
   def error_html
     "//div[@class='error']"
   end
 
   ##
-  # start
-  #   The starting point of crawling. Calls the authentication and scraping methods.
+  # The starting point of crawling. Calls the authentication and scraping methods.
   #
   def start
     # Very important object. Don't lose or overwrite it. Required for scraping.
@@ -144,9 +134,8 @@ class Uwlearn
   end
 
   ##
-  # authenticate
-  #   Logs in using the user credentials.
-  #   Returns an array of anchor(<a href=""></a>) elements of course links.
+  # Logs in using the user credentials.
+  # Returns an array of anchor(<a href=""></a>) elements of course links.
   #
   def authenticate(agent)
     puts "Authenticating ".foreground(:cyan) + @user_login.foreground(:cyan) + "...".foreground(:cyan)
@@ -171,10 +160,9 @@ class Uwlearn
   end
 
   ##
-  # acquire
-  #   Extracts the course name and code for further scraping of grades.
-  #   The scraping occurs in the initialization of the grade objects.
-  #   Stores the grades and courses in two different arrays: @learn_courses and @learn_grades.
+  # Extracts the course name and code for further scraping of grades.
+  # The scraping occurs in the initialization of the grade objects.
+  # Stores the grades and courses in two different arrays: @learn_courses and @learn_grades.
   #
   def acquire(links, agent)
     puts "Acquiring data...".foreground(:cyan)

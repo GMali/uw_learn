@@ -27,9 +27,9 @@ class Course
   # Creates a new instance of a course object.
   # Simply holds on to string values and the grade object.
   #
-  # @param [String] The course name
-  # @param [String] The course code
-  # @param [Object] The course grades
+  # @param name [String] The course name
+  # @param code [String] The course code
+  # @param grade [Object] The course grades
   #
   def initialize(name, code, grade)
     @name = name
